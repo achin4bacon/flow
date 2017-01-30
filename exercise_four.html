@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript | Flow | Four</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Calvinball (http://www.picpak.net/calvin/oldsite/images/oogy.gif) is a game with a very complicated scoring system. Your job is to write a piece of code which determines the winner of a game.
+
+            Provided below are three different player's scores. Uncomment one at a time to calculate the score for that player.
+
+            Calvinball Rules:
+                1. A player's score is equal to 500 if their score is not already a number. (this is implemented below).
+                2. A player's score is reduced by 300 if they are crying. Otherwise it is increased by 50.
+                3. A player's score is reduced by 77 if their last play was "Q"
+                4. A player gets an extra 395 points if they are in a tree, unless their last play was a number.
+                5. A player's score is doubled if they are holding the broom handle, but it is tripled if they have the broom brush. Otherwise the player's score is halved.
+                6. A player's score is multiplied by 1.5 if they are carrying the ball but only if they are not in a tree. Disregard this rule if the player is crying.
+                7. If the player's last play was a number (not a letter), the player's score is multiplied by that amount.
+        */
+
+
+        //Player One
+        var score1 = 193;
+        var last_play1 = "Q";
+        var broom1 = "handle";
+        var has_ball1 = false;
+        var is_in_tree1 = false;
+        var crying1 = false;
+        var finalScore1 = "";
+        var tempScore1 = "";
+        if (typeof (score1) != "number") {
+            score = 500;
+        }
+        if (crying1 === false) {
+            tempScore1 = score1 + 50;
+        } else {
+            tempScore1 = score1 - 300;
+        }
+
+        if (last_play1 === "Q") {
+            tempScore1 = tempScore1 - 77;
+        }
+
+        if (is_in_tree1 === true && typeof (last_play1) !== "number") {
+            tempScore1 = tempScore1 + 395;
+        }
+
+        if (broom1 = "handle") {
+            tempScore1 = tempScore1 * 2;
+        } else if (broom1 = "brush") {
+            tempScore1 = tempScore1 * 3;
+        } else {
+            tempScore1 = tempScore1 / 2;
+        }
+
+        if (has_ball1 === true && is_in_tree1 === false && crying1 === false) {
+            tempScore1 = tempScore1 * 1.5;
+        }
+
+
+        if (typeof (last_play1) === "number") {
+            finalScore1 = tempScore1 * last_play1;
+        } else {
+            finalScore1 = tempScore1;
+        }
+        console.log("Player One's Final Score is " + finalScore1)
+
+        /*
+        //Player Two
+        var score2 = 394;
+        var last_play2 = "W";
+        var broom2 = "none";
+        var has_ball2 = true;
+        var is_in_tree2 = true;
+        var crying2 = false;
+        */
+        var score2 = 394;
+        var last_play2 = "W";
+        var broom2 = "none";
+        var has_ball2 = true;
+        var is_in_tree2 = true;
+        var crying2 = false;
+        var finalScore2 = "";
+        var tempScore2 = "";
+
+        if (typeof (score2) != "number") {
+            score = 500;
+        }
+        if (crying2 === false) {
+            tempScore2 = score2 + 50;
+        } else {
+            tempScore2 = score2 - 300;
+        }
+
+
+        if (last_play2 === "Q") {
+            tempScore2 = tempScore2 - 77;
+        }
+
+        if (is_in_tree2 === true && typeof (last_play1) !== "number") {
+            tempScore2 = tempScore2 + 395;
+        }
+
+        if (broom2 === "handle") {
+            tempScore2 = tempScore2 * 2;
+        } else if (broom2 === "brush") {
+            tempScore2 = tempScore2 * 3;
+        } else if (broom2 !="handle" || broom2 != "brush") {
+            tempScore2 = tempScore2 / 2;
+        }
+        if (has_ball2 === true && is_in_tree2 === false && crying2 === false) {
+            tempScore2 = tempScore2 * 1.5;
+        }
+
+
+        if (typeof (last_play1) === "number") {
+            finalScore2 = tempScore2 * last_play2;
+        } else {
+            finalScore2 = tempScore2;
+        }
+
+        console.log("Player Two's Final Score is " + finalScore2)
+        /*
+        //Player Three
+        var score = "f";
+        var last_play = 1.5;
+        var broom = "brush";
+        var has_ball = true;
+        var is_in_tree = false;
+        var crying = true;
+        */
+
+        // if (typeof(score) != "number") {
+        //     score = 500;
+        // }
+
+        // console.log(score);
+        var score3 = "f";
+        var last_play3 = 1.5;
+        var broom3 = "brush";
+        var has_ball3 = true;
+        var is_in_tree3 = false;
+        var crying3 = true;
+        if (typeof (score3) != "number") {
+            score3 = 500;
+        }
+        if (crying3 === false) {
+            tempScore3 = score3 + 50;
+        } else {
+            tempScore3 = score3 - 300;
+        }
+
+
+        if (last_play3 === "Q") {
+            tempScore3 = tempScore3 - 77;
+        }
+
+        if (is_in_tree3 === true && typeof (last_play1) !== "number") {
+            tempScore3 = tempScore3 + 395;
+        }
+
+        if (broom3 === "handle") {
+            tempScore3 = tempScore3 * 2;
+        } else if (broom3 === "brush") {
+            tempScore3 = tempScore3 * 3;
+        } else {
+            tempScore3 = tempScore3 / 2;
+        }
+
+        if (has_ball3 === true && is_in_tree3 === false && crying3 === false) {
+            tempScore3 = tempScore3 * 1.5;
+        }
+
+
+        if (typeof (last_play1) === "number") {
+            finalScore3 = tempScore3 * last_play3;
+        } else {
+            finalScore3 = tempScore3;
+        }
+
+        console.log("Player Three's Final Score is " + finalScore3)
+
+
+        if (finalScore1 > finalScore2 && finalScore1 > finalScore3) {
+            console.log("Player One wins with a score of " + finalScore1 + "!")
+        }
+        else if (finalScore2 > finalScore1 && finalScore2 > finalScore3) {
+            console.log("Player Two wins with a score of " + finalScore2 + "!")
+        } else if (finalScore3 > finalScore2 && finalScore3 > finalScore1) {
+            console.log("Player Three wins with a score of " + finalScore3 + "!")
+        }
+
+    </script>
+</body>
+
+</html>
